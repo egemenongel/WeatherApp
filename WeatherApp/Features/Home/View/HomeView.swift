@@ -17,30 +17,26 @@ struct HomeView: View {
                     HeaderView(weather: weather)
                     DetailsView()
                     DayTemps()
-
-                    // TODO: Create bottom view
                 }
-
             }
             .toolbar {
-                ToolbarItemGroup(placement:.bottomBar) {
+                ToolbarItemGroup(placement: .bottomBar) {
                     Spacer()
-                    CustomButton(iconPath: "sun.max")
+                    IconButton(iconPath: "sun.max")
                     Spacer()
-                    CustomButton(iconPath: "safari")
+                    IconButton(iconPath: "safari")
                     Spacer()
-                    CustomButton(iconPath: "face.smiling.fill")
+                    IconButton(iconPath: "face.smiling.fill")
                     Spacer()
                 }
             }
             .preferredColorScheme(.dark)
             .ignoresSafeArea()
-
         }
     }
 }
 
-struct CustomButton: View {
+struct IconButton: View {
     let iconPath: String
     var body: some View {
         Button(action: {}) {
@@ -98,8 +94,6 @@ struct DetailsView: View {
     var body: some View {
         HStack {
             ForEach(weatherProps) { prop in
-                // TODO: Change to gradient
-                // TODO: Change to a component
                 ZStack{
                     // TODO: Learn how to fix padding inside of the rectangles
                     RoundedRectangle(cornerRadius: 20)
